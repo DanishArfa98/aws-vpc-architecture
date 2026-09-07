@@ -58,7 +58,9 @@ Konfigurasi alokasi IP CIDR untuk Public Subnet dan Private Subnet.
 ### 4. Route Tables Setup
 Aturan *routing table* untuk lalu lintas publik (`IGW`) dan private (`NAT Gateway`).
 
-![Route Tables](./docs/route-tables.png)
+![Public Route Tables](./docs/public-route-tables.png)
+
+![Private Route Tables](./docs/private-route-tables.png)
 
 ### 5. EC2 Instances Status
 Daftar instance EC2 yang menunjukkan `Bastion Server` memiliki Public IP, sedangkan `Private Instance` hanya memiliki Private IP.
@@ -74,11 +76,13 @@ Pengujian end-to-end dilakukan melalui terminal dengan alur sebagai berikut:
 2. Melakukan SSH Jump dari Bastion Server ke **Private Instance** (`ssh 10.0.2.x`).
 3. Menjalankan perintah `ping -c 3 amazon.com` dari Private Instance. Hasil respon ICMP membuktikan bahwa Private Instance **berhasil mengakses internet keluar secara aman melalui NAT Gateway** tanpa terekspos ke publik.
 
-![Terminal Ping Test Verification](./docs/terminal-ping-test.png)
+![Terminal Ping Test Verification](./docs/ssh.png)
+
+![Terminal Ping Test Verification](./docs/ping-test.png)
 
 ---
 
-## 🛠️ Summary Deployment Steps
+## Summary Deployment Steps
 
 1. **VPC & Subnets Provisioning:**
    * Buat VPC `10.0.0.0/16` dan aktifkan *DNS hostnames*.
