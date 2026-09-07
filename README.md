@@ -4,17 +4,17 @@
 ![Network](https://img.shields.io/badge/Networking-Public%20%26%20Private%20Subnets-blue)
 ![Security](https://img.shields.io/badge/Security-Bastion%20Host-red)
 
-## 📌 Project Overview
+##  Project Overview
 Project ini bertujuan untuk merancang dan mengimplementasikan arsitektur **Amazon Virtual Private Cloud (AWS VPC)** custom secara aman. Infrastruktur ini mengisolasi resource sensitif (seperti server aplikasi/database) di **Private Subnet**, sementara akses manajemen lalu lintas masuk dilakukan melalui **Bastion Host (Jump Box)** di **Public Subnet**, dan koneksi internet keluar (outbound) diatur secara aman melalui **NAT Gateway**.
 
 ---
 
-## 📐 Infrastructure Architecture Diagram
+##  Infrastructure Architecture Diagram
 ![AWS VPC Infrastructure Diagram](./docs/architecture-diagram.png)
 
 ---
 
-## ⚙️ Network & Infrastructure Specifications
+##  Network & Infrastructure Specifications
 
 ### 1. VPC & Subnet Design
 | Resource Name | Subnet Type | CIDR Block | Availability Zone | Internet Access |
@@ -37,7 +37,7 @@ Project ini bertujuan untuk merancang dan mengimplementasikan arsitektur **Amazo
 
 ---
 
-## 🖼️ Implementation Screenshots & Evidence
+##  Implementation Screenshots & Evidence
 
 ### 1. AWS VPC Resource Map
 Visualisasi topologi VPC AWS yang memperlihatkan hubungan otomatis antara Subnet, Route Table, Internet Gateway, dan NAT Gateway.
@@ -69,7 +69,7 @@ Daftar instance EC2 yang menunjukkan `Bastion Server` memiliki Public IP, sedang
 
 ---
 
-## 🧪 Proof of Concept (Verification & Testing)
+##  Proof of Concept (Verification & Testing)
 
 Pengujian end-to-end dilakukan melalui terminal dengan alur sebagai berikut:
 1. SSH / EC2 Instance Connect ke **Bastion Server** (Public Subnet).
@@ -101,7 +101,7 @@ Pengujian end-to-end dilakukan melalui terminal dengan alur sebagai berikut:
 
 ---
 
-## 🧹 Cleanup Instructions
+##  Cleanup Instructions
 Untuk menghindari biaya tambahan pada akun AWS:
 1. Terminate seluruh EC2 Instances (`Bastion Server` & `Private Instance`).
 2. Delete NAT Gateway dan Release Elastic IP.
