@@ -74,7 +74,7 @@ Daftar instance EC2 yang menunjukkan `Bastion Server` memiliki Public IP, sedang
 Pengujian end-to-end dilakukan melalui terminal dengan alur sebagai berikut:
 1. SSH / EC2 Instance Connect ke **Bastion Server** (Public Subnet).
 2. Melakukan SSH Jump dari Bastion Server ke **Private Instance** (`ssh 10.0.2.x`).
-3. Menjalankan perintah `ping -c 3 amazon.com` dari Private Instance. Hasil respon ICMP membuktikan bahwa Private Instance **berhasil mengakses internet keluar secara aman melalui NAT Gateway** tanpa terekspos ke publik.
+3. Menjalankan perintah `curl -I https://www.amazon.com` dan `curl -A 'mozilla/5.0' https://www.amazon.com`  dari Private Instance. Hasil respon ICMP membuktikan bahwa Private Instance **berhasil mengakses internet keluar secara aman melalui NAT Gateway** tanpa terekspos ke publik.
 
 ![Terminal Ping Test Verification](./docs/ssh.png)
 
